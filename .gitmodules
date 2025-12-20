@@ -4,3 +4,6 @@
 [submodule "Techne"]
 	path = Techne
 	url = https://github.com/Adathelove/Techne.git
+[submodule "Clio"]
+	path = Clio
+	url = https://github.com/Adathelove/Clio.git
