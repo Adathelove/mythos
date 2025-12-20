@@ -1,0 +1,6 @@
+[submodule "Iris"]
+	path = Iris
+	url = https://github.com/Adathelove/Iris.git
+[submodule "Techne"]
+	path = Techne
+	url = https://github.com/Adathelove/Techne.git
