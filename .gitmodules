@@ -7,3 +7,6 @@
 [submodule "Clio"]
 	path = Clio
 	url = https://github.com/Adathelove/Clio.git
+[submodule "Alkon"]
+	path = Alkon
+	url = https://github.com/Adathelove/Alkon.git
