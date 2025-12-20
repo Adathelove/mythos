@@ -1,0 +1,6 @@
+
+# Persona private artifacts
+DailyLogs/
+Personal/
+**/DailyLogs/
+**/Personal/
