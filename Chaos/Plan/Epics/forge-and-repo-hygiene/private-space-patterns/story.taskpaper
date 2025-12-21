@@ -1,0 +1,4 @@
+Story: private-space-patterns @owner(Chaos) @status(todo)
+	- Keep gitignore patterns for `Personal/` and tool chests consistent @status(todo)
+	- Document guidance for persona-private artifacts @status(todo)
+	- Validate no private paths leak into commits @status(todo)

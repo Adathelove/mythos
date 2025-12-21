@@ -1,0 +1,4 @@
+Story: shell-helper-ux @owner(Chaos) @status(todo)
+	- Harmonize banners/prompts across helpers @status(todo)
+	- Add width-aware formatting where useful @status(todo)
+	- Keep defaults safe (No-first confirmations) @status(todo)

@@ -1,0 +1,4 @@
+Story: plan-rollups @owner(Chaos) @status(todo)
+	- Teach Clio to read plan files and surface summaries @status(todo)
+	- Decide on summary cadence (daily/weekly) @status(todo)
+	- Wire outputs into logs or reports @status(todo)

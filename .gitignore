@@ -4,3 +4,7 @@ DailyLogs/
 Personal/
 **/DailyLogs/
 **/Personal/
+
+# Mailbox runtime traffic
+Mailbox/
+**/Mailbox/

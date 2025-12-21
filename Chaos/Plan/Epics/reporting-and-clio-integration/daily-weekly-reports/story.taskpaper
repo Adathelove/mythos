@@ -1,0 +1,4 @@
+Story: daily-weekly-reports @owner(Chaos) @status(todo)
+	- Define daily/weekly report formats @status(todo)
+	- Automate collection of logs and plan deltas @status(todo)
+	- Publish reports via Clio/Calliope channel @status(todo)

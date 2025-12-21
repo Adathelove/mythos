@@ -1,0 +1,4 @@
+Story: cross-persona-template @owner(Chaos) @status(todo)
+	- Define how other personas create `<Persona>.plan.md` and initial epics @status(todo)
+	- Prepare a minimal template they can copy @status(todo)
+	- Line up first adopters (e.g., Iris, Techne) @status(todo)

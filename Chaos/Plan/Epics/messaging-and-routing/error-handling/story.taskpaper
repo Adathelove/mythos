@@ -1,0 +1,4 @@
+Story: error-handling @owner(Chaos) @status(todo)
+	- Define behavior for malformed messages and missing recipients @status(todo)
+	- Add validation/guardrails to helpers @status(todo)
+	- Document fallback path (route to Chaos) @status(todo)

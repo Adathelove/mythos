@@ -1,0 +1,4 @@
+Story: spawn-ux @owner(Chaos) @status(todo)
+	- Refine banner/prompt flow in `spawn-persona.sh` @status(todo)
+	- Add options for quick persona selection defaults @status(todo)
+	- Keep default-No confirmation pattern, but streamline retries @status(todo)

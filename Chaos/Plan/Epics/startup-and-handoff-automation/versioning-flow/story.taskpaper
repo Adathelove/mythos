@@ -1,0 +1,4 @@
+Story: versioning-flow @owner(Chaos) @status(todo)
+	- Codify v1/v2 handoff increment logic in tooling @status(todo)
+	- Ensure date rollovers reset version @status(todo)
+	- Add tests or checks to prevent mismatched headers @status(todo)

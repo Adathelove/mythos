@@ -1,0 +1,4 @@
+Story: reply-workflow @owner(Chaos) @status(todo)
+	- Define reply/decline/help-needed flows and statuses @status(todo)
+	- Specify how to thread replies (file naming or inline) @status(todo)
+	- Ensure personas announce mailbox replies during startup summaries @status(todo)

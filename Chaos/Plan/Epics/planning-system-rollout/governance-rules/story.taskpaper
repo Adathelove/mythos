@@ -1,0 +1,4 @@
+Story: governance-rules @owner(Chaos) @status(todo)
+	- Document DoD and tag vocabulary for plans @status(todo)
+	- Define cadence for updating plan vs. logs @status(todo)
+	- Add guidance on archiving/completing epics/stories @status(todo)

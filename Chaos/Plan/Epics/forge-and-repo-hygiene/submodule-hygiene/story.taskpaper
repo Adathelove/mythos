@@ -1,0 +1,4 @@
+Story: submodule-hygiene @owner(Chaos) @status(todo)
+	- Define update/pin cadence for submodules @status(todo)
+	- Add checks to prevent stale pointers in handoffs @status(todo)
+	- Write quick reference for add/remove steps @status(todo)

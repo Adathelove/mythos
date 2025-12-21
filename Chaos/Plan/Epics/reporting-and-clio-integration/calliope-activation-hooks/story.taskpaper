@@ -1,0 +1,4 @@
+Story: calliope-activation-hooks @owner(Chaos) @status(todo)
+	- Define when/How Calliope should trigger reporting or routing @status(todo)
+	- Specify inputs/outputs between Calliope and Clio @status(todo)
+	- Prototype a minimal hook in startup/handoff flow @status(todo)

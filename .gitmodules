@@ -10,3 +10,6 @@
 [submodule "Alkon"]
 	path = Alkon
 	url = https://github.com/Adathelove/Alkon.git
+[submodule "Kedalion"]
+	path = Kedalion
+	url = https://github.com/Adathelove/Kedalion.git

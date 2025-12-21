@@ -1,0 +1,4 @@
+Story: build-plan-tree @owner(Chaos) @status(todo)
+	- Scaffold Plan/ directories and README @status(done) @done(2025-12-20)
+	- Move Chaos plan into Plan/ and retarget links @status(done) @done(2025-12-20)
+	- Ensure Planning.Method doc exists and is referenced in plan README @status(todo)

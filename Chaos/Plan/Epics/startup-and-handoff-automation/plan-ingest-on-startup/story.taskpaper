@@ -1,0 +1,4 @@
+Story: plan-ingest-on-startup @owner(Chaos) @status(todo)
+	- Extend StartupMode to read plan files alongside logs @status(todo)
+	- Summarize Today/This Week sections on startup @status(todo)
+	- Add guardrails for missing/malformed plan files @status(todo)

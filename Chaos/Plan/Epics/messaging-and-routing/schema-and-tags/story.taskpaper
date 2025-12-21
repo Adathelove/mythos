@@ -1,0 +1,4 @@
+Story: schema-and-tags @owner(Chaos) @status(todo)
+	- Define minimal message schema (from, to, subject, body, refs, status) @status(todo)
+	- Standardize tags for ask/decline/help/done @status(todo)
+	- Document expected file naming and metadata fields @status(todo)

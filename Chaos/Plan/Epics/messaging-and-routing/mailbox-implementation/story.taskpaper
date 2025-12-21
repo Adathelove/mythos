@@ -1,0 +1,4 @@
+Story: mailbox-implementation @owner(Chaos) @status(todo)
+	- Choose mailbox directory layout under `Mailbox/<PersonaName>/` @status(todo)
+	- Implement drop/read lifecycle (new, in-progress, done, declined) @status(todo)
+	- Provide CLI helper for writing/reading messages @status(todo)

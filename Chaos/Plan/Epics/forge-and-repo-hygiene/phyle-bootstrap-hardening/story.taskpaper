@@ -1,0 +1,4 @@
+Story: phyle-bootstrap-hardening @owner(Chaos) @status(todo)
+	- Improve owner/protocol detection and skip logic @status(todo)
+	- Add safety for existing submodules and remotes @status(todo)
+	- Document usage examples in repo @status(todo)
