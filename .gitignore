@@ -8,3 +8,12 @@ Personal/
 # Mailbox runtime traffic
 Mailbox/
 **/Mailbox/
+Chaos/Mailbox
+Chaos/mailbox-send.sh
+
+# Persona submodule working trees (managed independently)
+Alkon/
+Clio/
+Iris/
+Techne/
+Kedalion/

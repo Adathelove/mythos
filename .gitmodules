@@ -1,15 +1,20 @@
 [submodule "Iris"]
 	path = Iris
 	url = https://github.com/Adathelove/Iris.git
+	ignore = all
 [submodule "Techne"]
 	path = Techne
 	url = https://github.com/Adathelove/Techne.git
+	ignore = all
 [submodule "Clio"]
 	path = Clio
 	url = https://github.com/Adathelove/Clio.git
+	ignore = all
 [submodule "Alkon"]
 	path = Alkon
 	url = https://github.com/Adathelove/Alkon.git
+	ignore = all
 [submodule "Kedalion"]
 	path = Kedalion
 	url = https://github.com/Adathelove/Kedalion.git
+	ignore = all
