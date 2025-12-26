@@ -21,9 +21,12 @@
 [submodule "Aitnaios"]
 	path = Aitnaios
 	url = https://github.com/Adathelove/Aitnaios.git
+	ignore = all
 [submodule "Eurymedon"]
 	path = Eurymedon
 	url = https://github.com/Adathelove/Eurymedon.git
+	ignore = all
 [submodule "Roz"]
 	path = Roz
 	url = https://github.com/Adathelove/Roz.git
+	ignore = all

@@ -17,3 +17,7 @@ Clio/
 Iris/
 Techne/
 Kedalion/
+
+# OS cruft
+.DS_Store
+**/.DS_Store
