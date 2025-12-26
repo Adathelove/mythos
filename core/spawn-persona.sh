@@ -131,25 +131,95 @@ select_persona() {
   echo "$selected_line"
 }
 
-build_label() {
+parse_persona_line() {
   bann "${FUNCNAME[0]}"
   local line="$1"
-  emoji="$(printf '%s\n' "$line" | awk '{print $1}')"
-  name="$(printf '%s\n' "$line" | awk '{for(i=1;i<=NF;i++){if($i ~ /^[A-Z][A-Za-z0-9._-]*$/){print $i; exit}}}')"
-  if [[ -z "$name" ]]; then
+  persona_emoji="$(printf '%s\n' "$line" | awk '{print $1}')"
+  persona_name="$(printf '%s\n' "$line" | awk '{for(i=1;i<=NF;i++){if($i ~ /^[A-Z][A-Za-z0-9._-]*$/){print $i; exit}}}')"
+  if [[ -z "$persona_name" ]]; then
     fail "Could not extract persona name from line: $line"
     exit 1
   fi
+}
+
+ensure_log_dir() {
+  bann "${FUNCNAME[0]}"
+  local dir="$1"
+  if [[ -d "$dir" ]]; then
+    return 0
+  fi
+  if [[ -e "$dir" && ! -d "$dir" ]]; then
+    warn "$dir exists but is not a directory; skipping log dir creation"
+    return 1
+  fi
+  mkdir -p "$dir"
+  info "Created $dir"
+}
+
+next_version_for_today() {
+  local persona="$1"
+  local logdir="$2"
+  local dow mon day
+  dow="$(date '+%a')"
+  mon="$(date '+%b')"
+  day="$(date '+%d')"
+  local max_v=0
+  shopt -s nullglob
+  for f in "$logdir"/${persona}_${dow}_${mon}_${day}_v*; do
+    local base
+    base="$(basename "$f")"
+    if [[ "$base" =~ _v([0-9]+) ]]; then
+      local v="${BASH_REMATCH[1]}"
+      if (( v > max_v )); then
+        max_v="$v"
+      fi
+    fi
+  done
+  shopt -u nullglob
+  echo $((max_v + 1))
+}
+
+seed_log_stub() {
+  local path="$1"
+  local persona="$2"
+  local emoji="$3"
+  local version="$4"
+  if [[ -f "$path" ]]; then
+    info "Log stub already present: $path"
+    echo "$path"
+    return 0
+  fi
+  {
+    printf "# %s %s %s v%s\n\n" "$emoji" "$persona" "$(date '+%a %b %d')" "$version"
+    printf "_Created by spawn-persona.sh to mark version %s for %s._\n" "$version" "$persona"
+  } > "$path"
+  echo "$path"
+}
+
+build_label() {
+  bann "${FUNCNAME[0]}"
+  local emoji="$1"
+  local name="$2"
+  local version="$3"
+  local date_str
   date_str="$(date '+%a %b %d')"
-  persona_label="$emoji $name $date_str"
+  persona_label="$emoji $name $date_str v$version"
 }
 
 confirm_and_launch() {
   bann "${FUNCNAME[0]}"
   local label="$1"
-  cmd=(codex --search --full-auto "$label")
-  warn "About to run: codex --search --full-auto \"$label\""
+  local stub_path="$2"
+  local persona="$3"
+  local emoji="$4"
+  local version="$5"
+  local launch_prompt
+  launch_prompt="$label"
+  # Set working dir to repo root so personas can write to shared paths (Mailbox, etc.)
+  cmd=(codex -C "$REPO_ROOT" --search --full-auto "$launch_prompt")
+  warn "About to run: ${cmd[*]}"
   if ask_yesno_default_no "Proceed"; then
+    seed_log_stub "$stub_path" "$persona" "$emoji" "$version" >/dev/null
     info "Launching Codex as: $label"
     "${cmd[@]}"
   else
@@ -171,8 +241,22 @@ main() {
   info "requested after detection: ${requested:-<empty>}"
   # capture only the last line (selection) to avoid mixing with banner logs
   selected_line="$(select_persona "$requested" | tail -n 1)"
-  build_label "$selected_line"
-  confirm_and_launch "$persona_label"
+  parse_persona_line "$selected_line"
+  persona_dir="$REPO_ROOT/$persona_name"
+  if [[ ! -d "$persona_dir" ]]; then
+    fail "Persona directory missing: $persona_dir"
+    exit 1
+  fi
+  log_dir="$persona_dir/DailyLogs"
+  ensure_log_dir "$log_dir"
+  next_version="$(next_version_for_today "$persona_name" "$log_dir")"
+  date_slug="$(date '+%a_%b_%d')"
+  log_stub_path="$log_dir/${persona_name}_${date_slug}_v${next_version}__startup.md"
+  build_label "$persona_emoji" "$persona_name" "$next_version"
+  info "Next version: v$next_version"
+  info "Startup stub (on launch): $log_stub_path"
+  info "Using persona label: $persona_label"
+  confirm_and_launch "$persona_label" "$log_stub_path" "$persona_name" "$persona_emoji" "$next_version"
 }
 
 main "$@"
