@@ -18,3 +18,12 @@
 	path = Kedalion
 	url = https://github.com/Adathelove/Kedalion.git
 	ignore = all
+[submodule "Aitnaios"]
+	path = Aitnaios
+	url = https://github.com/Adathelove/Aitnaios.git
+[submodule "Eurymedon"]
+	path = Eurymedon
+	url = https://github.com/Adathelove/Eurymedon.git
+[submodule "Roz"]
+	path = Roz
+	url = https://github.com/Adathelove/Roz.git
