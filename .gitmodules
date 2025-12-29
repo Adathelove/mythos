@@ -30,3 +30,6 @@
 	path = Roz
 	url = https://github.com/Adathelove/Roz.git
 	ignore = all
+[submodule "PP"]
+	path = PP
+	url = https://github.com/Adathelove/PP.git
